@@ -2,7 +2,8 @@ import { Route, Switch } from "react-router-dom";
 import './App.css';
 import HomePage from "../src/pages/hompage/homepage.component";
 
-const HatsPage = () => {
+const HatsPage = (props) => {
+  console.log(props)
   return(
     <div>
       <h1>Hats Page</h1>
