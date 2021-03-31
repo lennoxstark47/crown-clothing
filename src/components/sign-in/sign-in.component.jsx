@@ -6,12 +6,12 @@ import { auth,signInWithGoogle } from '../../firebase/firebase.utils';
 
 class SignIn extends Component {
     constructor(props){
-        super(props)
+        super(props);
 
         this.state = {
             email: "",
             password: ""
-        }
+        };
     }
 
     handleSubmit = async Event => {
@@ -19,19 +19,19 @@ class SignIn extends Component {
         const { email, password } = this.state;
 
         try {
-            await auth.signInWithEmailAndPassword(email, password)
+            await auth.signInWithEmailAndPassword(email, password);
             this.setState({email: '', password: ''});
         } catch (error) {
             console.log(error);
         }
 
-    }
+    };
 
     handleChange = Event => {
         const {value, name} = Event.target;
 
-        this.setState({[name]: value})
-    }
+        this.setState({[name]: value});
+    };
 
     render() {
         return(
@@ -60,7 +60,7 @@ class SignIn extends Component {
                     </div>
                 </form>
             </div>
-        )
+        );
     }
 }
 

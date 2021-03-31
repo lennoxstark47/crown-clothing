@@ -13,7 +13,7 @@ class SignUp extends Component {
             email: '',
             password: '',
             confirmPassword: ''
-        }
+        };
     }
 
     handleSubmit = async Event => {
@@ -21,19 +21,19 @@ class SignUp extends Component {
         const { displayName, email, password, confirmPassword } = this.state;
 
         if (password !== confirmPassword){
-            alert("Password don't match")
+            alert("Password don't match");
             return;
         }
 
         try {
-            const { user } = await auth.createUserWithEmailAndPassword(email, password)
-            await createUserProfileDocument(user, {displayName})
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+            await createUserProfileDocument(user, {displayName});
             this.setState({
                 displayName : '',
                 email: '',
                 password: '',
                 confirmPassword: ''
-            })
+            });
 
 
         } catch(error) {
@@ -46,8 +46,8 @@ class SignUp extends Component {
 
         this.setState({
             [name]: value
-        })
-    }
+        });
+    };
 
     render() {
         const { displayName, email, password, confirmPassword } = this.state;
